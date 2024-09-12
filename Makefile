@@ -6,4 +6,4 @@ generate:
 .PHONY: build
 build: generate
 	@echo "Building..."
-	@goreleaser build --snapshot
+	@goreleaser build --snapshot --clean

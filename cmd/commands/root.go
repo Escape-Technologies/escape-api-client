@@ -1,29 +1,29 @@
-/*
-Copyright © 2024 NAME HERE <EMAIL ADDRESS>
-*/
 package cmd
 
 import (
+	"fmt"
 	"os"
 
+	"github.com/Escape-Technologies/escape-api-client/internal"
 	"github.com/spf13/cobra"
 )
 
-var apiKey string
+var (
+	apiKey string
+)
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "escape-api-client",
-	Short: "A brief description of your application",
-	Long: `A longer description that spans multiple lines and likely contains
-examples and usage of using your application. For example:
+	Short: "Escape API CLI Client",
+	Long: `Escape API CLI Client is a command-line interface client built using Cobra for interacting with the Escape API.
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
-	// Uncomment the following line if your bare application
-	// has an action associated with it:
-	// Run: func(cmd *cobra.Command, args []string) { },
+This application allows users to fetch scan details, list applications in an organization, start scans, and upload introspection data.`,
+	Version: fmt.Sprintf(
+		"%s, built on %s",
+		internal.BuildVersion,
+		internal.BuildDate,
+	),
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.

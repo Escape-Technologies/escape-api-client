@@ -20,8 +20,8 @@ builds:
     binary: escape-api-client
     main: ./cmd/cli/main.go
     ldflags:
-      - "-X internal.buildDate={{.Date}}"
-      - "-X internal.buildVersion={{.Version}}"
+      - "-X github.com/Escape-Technologies/escape-api-client/internal.BuildDate={{.Date}}"
+      - "-X github.com/Escape-Technologies/escape-api-client/internal.BuildVersion={{.Version}}"
 
 checksum:
   algorithm: sha256
