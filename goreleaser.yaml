@@ -1,0 +1,27 @@
+version: 2
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - id: escape-api-client
+    goos:
+      - linux
+      - darwin
+      - windows
+    goarch:
+      - arm
+      - arm64
+      - amd64
+      - "386"
+    goarm:
+      - "7"
+    binary: escape-api-client
+    main: ./cmd/cli/main.go
+    ldflags:
+      - "-X internal.buildDate={{.Date}}"
+      - "-X internal.buildVersion={{.Version}}"
+
+checksum:
+  algorithm: sha256
